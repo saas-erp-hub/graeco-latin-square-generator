@@ -134,17 +134,19 @@ function generateSquaresComposite(n: number): {a: number[][], b: number[][]} {
 
 const GraecoLatinSquare: React.FC = () => {
   const [order, setOrder] = useState<string>('');
+  const [inputValue, setInputValue] = useState<string>('');
   const [error, setError] = useState<string | null>(null);
   const [squares, setSquares] = useState<{a: number[][], b: number[][]} | null>(null);
+  const [showNumbers, setShowNumbers] = useState<boolean>(true);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     setSquares(null);
 
-    const n = parseInt(order);
-    if (isNaN(n) || n < 1 || n > 50) {
-      setError('Please enter a valid positive integer between 1 and 50.');
+    const n = parseInt(inputValue);
+    if (isNaN(n) || n < 1) {
+      setError('Please enter a valid positive integer.');
       return;
     }
 
@@ -161,6 +163,7 @@ const GraecoLatinSquare: React.FC = () => {
         result = generateSquaresComposite(n);
       }
       setSquares(result);
+      setOrder(String(n)); // Update order state only on successful generation
     } catch (err) {
       setError('Failed to generate Graeco-Latin square: ' + (err instanceof Error ? err.message : String(err)));
     }
@@ -180,12 +183,11 @@ const GraecoLatinSquare: React.FC = () => {
               <input
                 type="number"
                 id="order"
-                value={order}
-                onChange={(e) => setOrder(e.target.value)}
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Enter order (1-50, excluding 2 and 6)"
+                placeholder="Enter order (excluding 2 and 6)"
                 min="1"
-                max="50"
               />
             </div>
             <div className="flex items-end">
@@ -196,6 +198,18 @@ const GraecoLatinSquare: React.FC = () => {
                 Generate
               </button>
             </div>
+          </div>
+          <div className="flex items-center mt-4">
+            <input
+              type="checkbox"
+              id="showNumbers"
+              checked={showNumbers}
+              onChange={(e) => setShowNumbers(e.target.checked)}
+              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+            />
+            <label htmlFor="showNumbers" className="ml-2 block text-sm text-gray-900">
+              Show Numbers
+            </label>
           </div>
         </form>
 
@@ -249,19 +263,21 @@ const GraecoLatinSquare: React.FC = () => {
                       />
 
                       {/* Numbers */}
-                      <span
-                        className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none select-none"
-                        style={{
-                          color: '#000000',
-                          fontSize: '12px',
-                          fontWeight: 'bold',
-                          lineHeight: 1,
-                          userSelect: 'none',
-                        }}
-                      >
-                        <span>{cellA}</span>
-                        <span>{cellB}</span>
-                      </span>
+                      {showNumbers && (
+                        <span
+                          className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none select-none"
+                          style={{
+                            color: '#000000',
+                            fontSize: '12px',
+                            fontWeight: 'bold',
+                            lineHeight: 1,
+                            userSelect: 'none',
+                          }}
+                        >
+                          <span>{cellA}</span>
+                          <span>{cellB}</span>
+                        </span>
+                      )}
                     </div>
                   );
                 })
