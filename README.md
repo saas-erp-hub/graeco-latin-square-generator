@@ -1,46 +1,78 @@
-# Getting Started with Create React App
+# Graeco-Latin Square Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Did you know that for centuries, mathematicians believed it was impossible to arrange 36 officers of 6 different ranks and 6 different regiments into a 6x6 square such that no rank or regiment was repeated in any row or column, and no pair of rank-regiment appeared more than once? This famous "thirty-six officers problem" is a classic example of a Graeco-Latin Square, a fascinating mathematical puzzle with surprising applications, even inspiring a novel by Georges Perec. This tool allows you to explore these intriguing squares yourself!
 
-## Available Scripts
+<p align="center">
+  <img src="public/images/Ordner%2010%20without%20Numbers.png" alt="Graeco-Latin Square Order 10 without Numbers" width="300"/>
+</p>
 
-In the project directory, you can run:
+## About This Project
 
-### `npm start`
+This generator creates Graeco-Latin Squares and visualizes them in a particularly clear and intuitive way. Unlike traditional representations that often rely on the Greek and Latin alphabets, this tool focuses on a clear and understandable visualization of the underlying mathematical structure. It is a useful tool for anyone interested in combinatorial design, experimental planning, or simply the beauty of mathematical patterns.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+*   **Graeco-Latin Square Generation:** Generates Graeco-Latin Squares for various orders.
+*   **Intuitive Visualization:** Displays the generated squares in an easy-to-understand format.
+*   **Interactive User Interface:** Allows for easy input of the desired order and display of results.
+*   **Web-based:** Runs directly in the browser, no installation required.
 
-### `npm test`
+## How It Works
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The project generates Graeco-Latin Squares in the background using algorithms based on established mathematical theories for constructing orthogonal Latin Squares. The resulting squares are then visualized in a user-friendly interface that highlights the unique properties of these mathematical structures.
 
-### `npm run build`
+The core generation logic distinguishes between prime and composite orders:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+*   **For Prime Orders (n):** The algorithm constructs two orthogonal Latin Squares. The first square (A) is generated using the standard `(i + j) % n` method. The second square (B) is constructed using `(i + k * j) % n` (or a variant involving modular exponentiation), where `k` is a primitive root modulo `n`. This is a mathematically recognized and correct method for prime orders.
+*   **For Composite Orders (n, excluding 2 and 6):** The algorithm also constructs two orthogonal Latin Squares. The first square (A) uses `(i + j) % n`. The second square (B) uses `(i + k * j) % n`, where `k` is the smallest integer coprime to `n`. This is also a known method for constructing orthogonal Latin Squares for composite orders.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The implementation correctly handles the non-existence of Graeco-Latin Squares for orders 2 and 6.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Screenshots
 
-### `npm run eject`
+![Graeco-Latin Square Order 5](public/images/Order%205.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Graeco-Latin Square Order 10](public/images/Order10.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Graeco-Latin Square Order 26](public/images/Order26.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Setup and Usage
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To run the project locally, follow these steps:
 
-## Learn More
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/graeco-latin-square-generator.git
+    cd graeco-latin-square-generator
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3.  **Start the project:**
+    ```bash
+    npm start
+    ```
+    The project will open in your browser at `http://localhost:3000` (or a similar port).
+
+## Project Structure
+
+*   `src/GraecoLatinSquareGenerator.tsx`: Contains the core logic for generating and visualizing Graeco-Latin Squares.
+*   `public/index.html`: The main HTML file for the application.
+*   `public/images/`: Folder for screenshots and other images.
+*   `package.json`: Defines project metadata and dependencies.
+
+## Future Improvements
+
+*   Option to display with Greek and Latin symbols.
+*   Support for generating and visualizing Graeco-Latin Squares of higher orders (current research indicates that online tools for orders above 10 are rare, and for very large orders like n=50, programmatic approaches are required).
+*   Export options for generated squares (e.g., as image, CSV).
+*   Enhanced input validation.
+*   **Consider a Development CLI:** Explore the possibility of adding a command-line interface for development tasks such as generating square data for testing, running specific test suites, or performing performance tests.
+*   **Enhance User Feedback and Examples:** Improve user feedback mechanisms within the UI and provide more detailed examples in the documentation.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
