@@ -42,7 +42,7 @@ To run the project locally, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/graeco-latin-square-generator.git
+    git clone https://github.com/saas-erp-hub/graeco-latin-square-generator.git
     cd graeco-latin-square-generator
     ```
 
