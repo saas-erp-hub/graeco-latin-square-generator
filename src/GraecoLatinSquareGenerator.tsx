@@ -2,29 +2,96 @@ import React, { useState } from 'react';
 
 const colorPalette = [
   // Primary colors
-  '#ef4444', '#f97316', '#f59e0b', '#eab308', '#84cc16', '#22c55e', '#14b8a6', '#0ea5e9',
-  '#3b82f6', '#6366f1', '#8b5cf6', '#ec4899', '#f43f5e',
+  '#ef4444',
+  '#f97316',
+  '#f59e0b',
+  '#eab308',
+  '#84cc16',
+  '#22c55e',
+  '#14b8a6',
+  '#0ea5e9',
+  '#3b82f6',
+  '#6366f1',
+  '#8b5cf6',
+  '#ec4899',
+  '#f43f5e',
 
   // Secondary colors
-  '#f87171', '#fb923c', '#fbbf24', '#facc15', '#a3e635', '#4ade80', '#2dd4bf', '#38bdf8',
-  '#60a5fa', '#818cf8', '#a78bfa', '#f472b6', '#f0abfc',
+  '#f87171',
+  '#fb923c',
+  '#fbbf24',
+  '#facc15',
+  '#a3e635',
+  '#4ade80',
+  '#2dd4bf',
+  '#38bdf8',
+  '#60a5fa',
+  '#818cf8',
+  '#a78bfa',
+  '#f472b6',
+  '#f0abfc',
 
   // Tertiary colors
-  '#fca5a5', '#f9a825', '#f59e0b', '#eab308', '#84cc16', '#10b981', '#0d9488', '#0ea5e9',
-  '#3b82f6', '#6366f1', '#8b5cf6', '#ec4899', '#d946ef',
+  '#fca5a5',
+  '#f9a825',
+  '#f59e0b',
+  '#eab308',
+  '#84cc16',
+  '#10b981',
+  '#0d9488',
+  '#0ea5e9',
+  '#3b82f6',
+  '#6366f1',
+  '#8b5cf6',
+  '#ec4899',
+  '#d946ef',
 
   // Additional distinct colors
-  '#06b6d4', '#2563eb', '#4338ca', '#6b219c', '#9333ea', '#c026d3', '#e11d98', '#f43f7c',
-  '#ea580c', '#be185d', '#86198f', '#7e22ce', '#581c87', '#1e40af', '#0369a1', '#075985',
-  '#0c4a6e', '#083344', '#0f172a', '#1e293b', '#334155', '#475569', '#64748b', '#94a3b8',
-  '#cbd5e1', '#e2e8f0', '#f1f5f9'
+  '#06b6d4',
+  '#2563eb',
+  '#4338ca',
+  '#6b219c',
+  '#9333ea',
+  '#c026d3',
+  '#e11d98',
+  '#f43f7c',
+  '#ea580c',
+  '#be185d',
+  '#86198f',
+  '#7e22ce',
+  '#581c87',
+  '#1e40af',
+  '#0369a1',
+  '#075985',
+  '#0c4a6e',
+  '#083344',
+  '#0f172a',
+  '#1e293b',
+  '#334155',
+  '#475569',
+  '#64748b',
+  '#94a3b8',
+  '#cbd5e1',
+  '#e2e8f0',
+  '#f1f5f9',
 ];
 
+/**
+ * Returns a color from the color palette based on the given value.
+ * The color is determined by the value modulo the length of the color palette.
+ * @param value The number to use for color selection.
+ * @returns A hex color string.
+ */
 function getColor(value: number): string {
   return colorPalette[value % colorPalette.length];
 }
 
-// Compute gcd
+/**
+ * Computes the greatest common divisor (GCD) of two numbers using the Euclidean algorithm.
+ * @param a The first number.
+ * @param b The second number.
+ * @returns The greatest common divisor of a and b.
+ */
 function gcd(a: number, b: number): number {
   while (b !== 0) {
     const t = b;
@@ -34,7 +101,12 @@ function gcd(a: number, b: number): number {
   return a;
 }
 
-// Check if n is prime
+/**
+ * Checks if a given number is a prime number.
+ * Implements an optimized primality test.
+ * @param n The number to check.
+ * @returns True if the number is prime, false otherwise.
+ */
 function isPrime(n: number): boolean {
   if (n <= 1) return false;
   if (n <= 3) return true;
@@ -45,7 +117,11 @@ function isPrime(n: number): boolean {
   return true;
 }
 
-// Find a primitive root modulo n (only for prime n)
+/**
+ * Finds a primitive root modulo a prime number p.
+ * @param p The prime number.
+ * @returns The smallest primitive root modulo p, or -1 if p is not prime or no primitive root is found.
+ */
 function findPrimitiveRoot(p: number): number {
   if (!isPrime(p)) return -1;
   const phi = p - 1;
@@ -73,7 +149,13 @@ function findPrimitiveRoot(p: number): number {
   return -1;
 }
 
-// Modular exponentiation
+/**
+ * Computes (base^exp) % mod using modular exponentiation.
+ * @param base The base number.
+ * @param exp The exponent.
+ * @param mod The modulus.
+ * @returns The result of (base^exp) % mod.
+ */
 function modularExp(base: number, exp: number, mod: number): number {
   let result = 1;
   base = base % mod;
@@ -85,8 +167,13 @@ function modularExp(base: number, exp: number, mod: number): number {
   return result;
 }
 
-// Generate Graeco-Latin squares for prime n using primitive root k
-function generateSquaresPrime(n: number): {a: number[][], b: number[][]} {
+/**
+ * Generates a pair of Graeco-Latin squares for a prime order n using a primitive root.
+ * @param n The prime order of the squares.
+ * @returns An object containing two 2D arrays, `a` and `b`, representing the two orthogonal Latin squares.
+ * @throws Error if no primitive root is found for the given prime.
+ */
+function generateSquaresPrime(n: number): { a: number[][]; b: number[][] } {
   const k = findPrimitiveRoot(n);
   if (k === -1) throw new Error('No primitive root found for prime ' + n);
 
@@ -106,7 +193,12 @@ function generateSquaresPrime(n: number): {a: number[][], b: number[][]} {
   return { a: squareA, b: squareB };
 }
 
-// For composite n (except 2 and 6), use smallest k coprime to n
+/**
+ * Finds the smallest integer k (k >= 2) that is coprime to n.
+ * Used for generating Graeco-Latin squares for composite orders.
+ * @param n The number to find a coprime for.
+ * @returns The smallest coprime integer k, or 1 if no such k is found (should not happen for n > 1).
+ */
 function findCoprime(n: number): number {
   for (let k = 2; k < n; k++) {
     if (gcd(k, n) === 1) return k;
@@ -114,7 +206,13 @@ function findCoprime(n: number): number {
   return 1;
 }
 
-function generateSquaresComposite(n: number): {a: number[][], b: number[][]} {
+/**
+ * Generates a pair of Graeco-Latin squares for a composite order n (excluding 2 and 6).
+ * Uses the smallest k coprime to n for construction.
+ * @param n The composite order of the squares.
+ * @returns An object containing two 2D arrays, `a` and `b`, representing the two orthogonal Latin squares.
+ */
+function generateSquaresComposite(n: number): { a: number[][]; b: number[][] } {
   const k = findCoprime(n);
   const squareA: number[][] = [];
   const squareB: number[][] = [];
@@ -132,11 +230,17 @@ function generateSquaresComposite(n: number): {a: number[][], b: number[][]} {
   return { a: squareA, b: squareB };
 }
 
+/**
+ * GraecoLatinSquare React Component.
+ * This component provides a user interface to generate and visualize Graeco-Latin Squares.
+ * It handles user input for the order (n), generates the squares based on whether n is prime or composite,
+ * and displays the result with an interactive color visualization.
+ */
 const GraecoLatinSquare: React.FC = () => {
   const [order, setOrder] = useState<string>('');
   const [inputValue, setInputValue] = useState<string>('');
   const [error, setError] = useState<string | null>(null);
-  const [squares, setSquares] = useState<{a: number[][], b: number[][]} | null>(null);
+  const [squares, setSquares] = useState<{ a: number[][]; b: number[][] } | null>(null);
   const [showNumbers, setShowNumbers] = useState<boolean>(true);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -156,7 +260,7 @@ const GraecoLatinSquare: React.FC = () => {
     }
 
     try {
-      let result: {a: number[][], b: number[][]};
+      let result: { a: number[][]; b: number[][] };
       if (isPrime(n)) {
         result = generateSquaresPrime(n);
       } else {
@@ -280,7 +384,7 @@ const GraecoLatinSquare: React.FC = () => {
                       )}
                     </div>
                   );
-                })
+                }),
               )}
             </div>
           </div>
