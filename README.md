@@ -76,3 +76,15 @@ To run the project locally, follow these steps:
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
+
+## Contact
+
+For questions or feedback, please contact bytebuilder@users.noreply.github.com.
+
+## Acknowledgements
+
+*   [Contributor Covenant](https://www.contributor-covenant.org/) for the Code of Conduct.
+*   [Georges Perec](https://en.wikipedia.org/wiki/Georges_Perec) for inspiring the "thirty-six officers problem" reference.
+*   The mathematical community for their extensive research on Graeco-Latin Squares.
+*   All contributors to this project.
