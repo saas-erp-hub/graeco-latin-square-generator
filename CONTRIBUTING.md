@@ -8,7 +8,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ### Reporting Bugs
 
-If you find a bug, please open an issue on our [GitHub Issues page](https://github.com/dein-benutzername/graeco-latin-square-generator/issues). When reporting a bug, please include:
+If you find a bug, please open an issue on our [GitHub Issues page](https://github.com/saas-erp-hub/graeco-latin-square-generator/issues). When reporting a bug, please include:
 
 *   A clear and concise description of the bug.
 *   Steps to reproduce the behavior.
