@@ -1,79 +1,57 @@
 import React, { useState } from 'react';
 
 const colorPalette = [
-  // Primary colors
-  '#ef4444',
-  '#f97316',
-  '#f59e0b',
-  '#eab308',
-  '#84cc16',
-  '#22c55e',
-  '#14b8a6',
-  '#0ea5e9',
-  '#3b82f6',
-  '#6366f1',
-  '#8b5cf6',
-  '#ec4899',
-  '#f43f5e',
+  // Vibrant Primary Hues
+  '#FF0000', // Red
+  '#FFA500', // Orange
+  '#FFFF00', // Yellow
+  '#00FF00', // Lime Green
+  '#008000', // Green
+  '#00FFFF', // Cyan
+  '#0000FF', // Blue
+  '#800080', // Purple
+  '#FF00FF', // Magenta
+  '#FF1493', // Deep Pink
 
-  // Secondary colors
-  '#f87171',
-  '#fb923c',
-  '#fbbf24',
-  '#facc15',
-  '#a3e635',
-  '#4ade80',
-  '#2dd4bf',
-  '#38bdf8',
-  '#60a5fa',
-  '#818cf8',
-  '#a78bfa',
-  '#f472b6',
-  '#f0abfc',
+  // Lighter/Pastel Variations (distinct from primaries)
+  '#FFC0CB', // Pink
+  '#FFD700', // Gold (distinct yellow)
+  '#ADFF2F', // GreenYellow
+  '#7CFC00', // LawnGreen
+  '#40E0D0', // Turquoise
+  '#1E90FF', // DodgerBlue
+  '#6A5ACD', // SlateBlue
+  '#BA55D3', // MediumOrchid
 
-  // Tertiary colors
-  '#fca5a5',
-  '#f9a825',
-  '#f59e0b',
-  '#eab308',
-  '#84cc16',
-  '#10b981',
-  '#0d9488',
-  '#0ea5e9',
-  '#3b82f6',
-  '#6366f1',
-  '#8b5cf6',
-  '#ec4899',
-  '#d946ef',
+  // Darker/Deeper Variations (distinct from primaries)
+  '#8B0000', // Dark Red
+  '#CD853F', // Peru (Brownish Orange)
+  '#BDB76B', // Dark Khaki (Muted Yellow-Green)
+  '#2E8B57', // SeaGreen
+  '#00CED1', // DarkTurquoise
+  '#0000CD', // MediumBlue
+  '#4338ca', // Darker Indigo (from original)
+  '#6B219C', // Dark Purple (from original)
+  '#C026D3', // Vibrant Magenta (from original)
 
-  // Additional distinct colors
-  '#06b6d4',
-  '#2563eb',
-  '#4338ca',
-  '#6b219c',
-  '#9333ea',
-  '#c026d3',
-  '#e11d98',
-  '#f43f7c',
-  '#ea580c',
-  '#be185d',
-  '#86198f',
-  '#7e22ce',
-  '#581c87',
-  '#1e40af',
-  '#0369a1',
-  '#075985',
-  '#0c4a6e',
-  '#083344',
-  '#0f172a',
-  '#1e293b',
-  '#334155',
-  '#475569',
-  '#64748b',
-  '#94a3b8',
-  '#cbd5e1',
-  '#e2e8f0',
-  '#f1f5f9',
+  // More distinct hues/variations to reach ~40
+  '#FF4500', // OrangeRed
+  '#DAA520', // Goldenrod
+  '#32CD32', // LimeGreen (slightly darker than Lime)
+  '#20B2AA', // LightSeaGreen
+  '#6495ED', // CornflowerBlue
+  '#87CEEB', // SkyBlue
+  '#ADD8E6', // LightBlue
+  '#DDA0DD', // Plum
+  '#FF69B4', // HotPink
+  '#8A2BE2', // BlueViolet
+  '#9400D3', // DarkViolet
+  '#9932CC', // DarkOrchid
+
+  // Neutrals/Grays (limited, for contrast)
+  '#808080', // Gray
+  '#C0C0C0', // Silver
+  '#D3D3D3', // LightGray
 ];
 
 /**

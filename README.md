@@ -15,6 +15,14 @@ This generator creates Graeco-Latin Squares and visualizes them in a particularl
 *   **Interactive User Interface:** Allows for easy input of the desired order and display of results.
 *   **Web-based:** Runs directly in the browser, no installation required.
 
+### Color Visualization
+
+The visualization uses a carefully curated color palette to represent the numerical values within the Graeco-Latin Squares. While the palette is designed for good general distinguishability, it's important to note the inherent limitations:
+
+*   **Perceptual Limits:** The human eye can only reliably distinguish a limited number of distinct colors, especially when displayed in small areas or in close proximity. Our palette aims for a good compromise, but for very high orders (e.g., above 40), some colors may appear similar, even if their underlying numerical values are unique.
+*   **Color Repetition:** If the order of the square (`n`) exceeds the number of unique colors in the palette, colors will necessarily repeat. While the underlying numerical pairs remain unique (a core property of Graeco-Latin Squares), the individual colors will not be unique per row or column in such cases.
+*   **Accessibility:** This palette has not been optimized for color blindness. Future improvements may address this.
+
 ## How It Works
 
 The project generates Graeco-Latin Squares in the background using algorithms based on established mathematical theories for constructing orthogonal Latin Squares. The resulting squares are then visualized in a user-friendly interface that highlights the unique properties of these mathematical structures.
