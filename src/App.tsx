@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import GraecoLatinSquareGenerator from './GraecoLatinSquareGenerator';
-// Trigger Vercel redeploy
 
 /**
  * The main application component.
