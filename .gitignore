@@ -86,3 +86,4 @@ tmp/
 
 # Gemini specific
 .gemini/
+.vercel
