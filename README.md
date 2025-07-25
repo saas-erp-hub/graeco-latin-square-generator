@@ -29,7 +29,7 @@ The project generates Graeco-Latin Squares in the background using algorithms ba
 
 The core generation logic distinguishes between prime and composite orders:
 
-*   **For Prime Orders (n):** The algorithm constructs two orthogonal Latin Squares. The first square (A) is generated using the standard `(i + j) % n` method. The second square (B) is constructed using `(i + k * j) % n` (or a variant involving modular exponentiation), where `k` is a primitive root modulo `n`. This is a mathematically recognized and correct method for prime orders.
+*   **For Prime Orders (n):** The algorithm constructs two orthogonal Latin Squares. The first square (A) is generated using the standard `(i + j) % n` method. The second square (B) is constructed using `(i + k * j) % n`, where `k` is a primitive root modulo `n`. This is a mathematically recognized and correct method for prime orders.
 *   **For Composite Orders (n, excluding 2 and 6):** The algorithm also constructs two orthogonal Latin Squares. The first square (A) uses `(i + j) % n`. The second square (B) uses `(i + k * j) % n`, where `k` is the smallest integer coprime to `n`. This is also a known method for constructing orthogonal Latin Squares for composite orders.
 
 The implementation correctly handles the non-existence of Graeco-Latin Squares for orders 2 and 6.
