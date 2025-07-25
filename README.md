@@ -1,5 +1,9 @@
 # Graeco-Latin Square Generator
 
+> **Live Demo:** [https://graeco-latin-square-generator.vercel.app/](https://graeco-latin-square-generator.vercel.app/)
+
+> **Live Demo:** [https://graeco-latin-square-generator.vercel.app/](https://graeco-latin-square-generator.vercel.app/)
+
 Did you know that for centuries, mathematicians believed it was impossible to arrange 36 officers of 6 different ranks and 6 different regiments into a 6x6 square such that no rank or regiment was repeated in any row or column, and no pair of rank-regiment appeared more than once? This famous "thirty-six officers problem" is a classic example of a Graeco-Latin Square, a fascinating mathematical puzzle with surprising applications, even inspiring a novel by Georges Perec. This tool allows you to explore these intriguing squares yourself!
 
 <p align="center">
