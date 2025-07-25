@@ -185,7 +185,7 @@ function generateSquaresPrime(n: number): { a: number[][]; b: number[][] } {
     const rowB: number[] = [];
     for (let j = 0; j < n; j++) {
       rowA.push((i + j) % n);
-      rowB.push((i + modularExp(k, j, n)) % n);
+      rowB.push((i + k * j) % n);
     }
     squareA.push(rowA);
     squareB.push(rowB);
