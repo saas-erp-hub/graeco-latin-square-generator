@@ -2,8 +2,9 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders App component', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  // You might want to add more specific assertions here based on what App renders
+  // For now, we just check if the component renders without throwing an error.
+  expect(screen.getByRole('heading', { name: /Graeco-Latin Square Generator/i })).toBeInTheDocument();
 });
