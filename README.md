@@ -90,7 +90,7 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 
 ## Contact
 
-For questions or feedback, please contact bytebuilder@users.noreply.github.com.
+For questions, feedback, or suggestions, please open an issue on the [GitHub Issues page](https://github.com/saas-erp-hub/graeco-latin-square-generator/issues). This is the preferred method of communication as it helps keep all project-related discussions in one place.
 
 ## Acknowledgements
 
