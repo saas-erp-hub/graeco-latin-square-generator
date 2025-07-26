@@ -1,8 +1,8 @@
 # Graeco-Latin Square Generator
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/saas-erp-hub/graeco-latin-square-generator)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![CI Status](https://github.com/saas-erp-hub/graeco-latin-square-generator/actions/workflows/ci.yml/badge.svg)](https://github.com/saas-erp-hub/graeco-latin-square-generator/actions/workflows/ci.yml)
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Live_Demo-black?style=for-the-badge&logo=vercel)](https://vercel.com/saas-erp-hub/graeco-latin-square-generator)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![CI Status](https://github.com/saas-erp-hub/graeco-latin-square-generator/actions/workflows/ci.yml/badge.svg?style=for-the-badge)](https://github.com/saas-erp-hub/graeco-latin-square-generator/actions/workflows/ci.yml)
 
 
 
