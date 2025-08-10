@@ -1,16 +1,33 @@
 # Graeco-Latin Square Generator
 
-[![Vercel Deployment](https://img.shields.io/badge/Vercel-Live_Demo-black?style=for-the-badge&logo=vercel)](https://vercel.com/saas-erp-hub/graeco-latin-square-generator)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![CI Status](https://github.com/saas-erp-hub/graeco-latin-square-generator/actions/workflows/ci.yml/badge.svg?style=for-the-badge)](https://github.com/saas-erp-hub/graeco-latin-square-generator/actions/workflows/ci.yml)
+<p align="center">
+  <a href="https://graeco-latin-square-generator.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live_Demo-Visit_Here-28a745?style=for-the-badge&logo=Vercel" alt="Live Demo">
+  </a>
+</p>
 
-
-
-
+<p align="center">
+  <a href="https://opensource.org/licenses/MIT" target="_blank">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License: MIT">
+  </a>
+  <a href="https://github.com/saas-erp-hub/graeco-latin-square-generator/actions/workflows/ci.yml" target="_blank">
+    <img src="https://github.com/saas-erp-hub/graeco-latin-square-generator/actions/workflows/ci.yml/badge.svg?style=for-the-badge" alt="CI Status">
+  </a>
+</p>
 
 ## About This Project
 
-This generator creates Graeco-Latin Squares and visualizes them in a particularly clear and intuitive way. Unlike traditional representations that often rely on the Greek and Latin alphabets, this tool focuses on a clear and understandable visualization of the underlying mathematical structure. It is a useful tool for anyone interested in combinatorial design, experimental planning, or simply the beauty of mathematical patterns.
+This generator creates Graeco-Latin Squares, a fascinating type of combinatorial object. It provides a clear and intuitive visualization that, unlike traditional representations, focuses on the underlying mathematical structure. The project was inspired by the famous **"Thirty-Six Officers Problem"** posed by Leonhard Euler in 1782, which asked if it was possible to arrange six regiments of six officers of different ranks in a 6x6 square so that no row or column repeated a rank or regiment. (Spoiler: For a 6x6 square, it's not possible!)
+
+This tool is useful for anyone interested in combinatorics, experimental design, or simply the beauty of mathematical patterns.
+
+## Built With
+
+*   **Framework:** [React](https://reactjs.org/)
+*   **Language:** [TypeScript](https://www.typescriptlang.org/)
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+*   **Testing:** [Jest](https://jestjs.io/) & [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+*   **Build Tool:** [Vite](https://vitejs.dev/)
 
 ## Features
 
