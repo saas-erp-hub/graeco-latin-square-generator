@@ -27,7 +27,7 @@ This tool is useful for anyone interested in combinatorics, experimental design,
 *   **Language:** [TypeScript](https://www.typescriptlang.org/)
 *   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 *   **Testing:** [Jest](https://jestjs.io/) & [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
-*   **Build Tool:** [Vite](https://vitejs.dev/)
+*   **Build Tool:** [Create React App](https://create-react-app.dev/)
 
 ## Features
 
